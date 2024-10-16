@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#taskForm {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#taskForm input[type='text'],
+#taskForm textarea,
+#taskForm input[type='date'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#taskForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#tasksContainer {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+}
+
+#tasksContainer li {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #333;
+}
+
+#reportContent {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Añade esto al final de tu archivo CSS */
+#tasksContainer li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#tasksContainer li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#tasksContainer li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#tasksContainer li button {
+    margin-left: 10px;
+}
+
+#sortButtons {
+    margin-bottom: 20px;
+}
+
+#sortButtons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#sortButtons button:hover {
+    background-color: #e0e0e0;
+}
+
+#taskPriority {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#taskTimeEstimate {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#subtasksContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#tasksContainer ul {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#tasksContainer ul li {
+    margin-bottom: 5px;
+}
+
+#weeklyPlanContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#weeklyPlanContainer h2 {
+    margin-bottom: 10px;
+}
+
+#weeklyPlanContainer h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#weeklyPlanContainer ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#weeklyPlanContainer li {
+    margin-bottom: 5px;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.calendar-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendar-cell {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.calendar-cell.header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-cell ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.calendar-cell li {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    padding: 2px 5px;
+    background-color: #e9e9e9;
+    border-radius: 3px;
+}
+
+.calendar-cell li[data-priority="alta"] {
+    background-color: #ffcccb;
+}
+
+.calendar-cell li[data-priority="media"] {
+    background-color: #ffffcc;
+}
+
+.calendar-cell li[data-priority="baja"] {
+    background-color: #ccffcc;
+}
+
+#voiceAssistantBtn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#voiceAssistantBtn:hover {
+    background-color: #45a049;
+}
+
+#suggestGroupsBtn, #generateReportBtn {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#suggestGroupsBtn:hover, #generateReportBtn:hover {
+    background-color: #45a049;
+}
+
+#taskGroupSuggestions, #productivityReportContainer {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#taskGroupSuggestions h3, #productivityReportContainer h3 {
+    margin-top: 0;
+}
+
+#groupSuggestionsSection {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#suggestGroupsBtn {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#suggestGroupsBtn:hover {
+    background-color: #45a049;
+}
+
+#taskGroupSuggestions h3 {
+    margin-top: 0;
+}

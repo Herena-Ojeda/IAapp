@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificador de Tareas</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Planificador de Tareas</h1>
+        <form id="taskForm">
+            <input type="text" id="taskName" placeholder="Nombre de la tarea" required>
+            <textarea id="taskDescription" placeholder="Descripción de la tarea (opcional)"></textarea>
+            <input type="date" id="taskDeadline" required>
+            <select id="taskPriority" required>
+                <option value="">Selecciona la prioridad</option>
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+            <input type="number" id="taskTimeEstimate" placeholder="Estimación de tiempo (minutos)" min="1">
+            <button type="button" id="suggestSubtasksBtn">Sugerir Subtareas</button>
+            <div id="subtasksContainer"></div>
+            <button type="submit">Agregar Tarea</button>
+        </form>
+        <button id="voiceAssistantBtn">Activar Asistente de Voz</button>
+        <h2>Tareas:</h2>
+        <div id="sortButtons">
+            <button onclick="sortTasks('deadline')">Ordenar por Fecha</button>
+            <button onclick="sortTasks('priority')">Ordenar por Prioridad</button>
+            <button onclick="sortTasks('status')">Ordenar por Estado</button>
+        </div>
+        <div id="tasksContainer"></div>
+        <div id="reportContent"></div>
+        <button id="generateWeeklyPlanBtn">Generar Plan Semanal</button>
+        <div id="weeklyPlanContainer"></div>
+        <div id="recurringTasksSuggestions"></div>
+        <div id="taskTemplatesContainer"></div>
+        <button id="checkRecurringTasksBtn">Buscar Tareas Recurrentes</button>
+        <div id="groupSuggestionsSection">
+            <button id="suggestGroupsBtn">Sugerir Agrupaciones</button>
+            <div id="taskGroupSuggestions"></div>
+        </div>
+        <button id="generateReportBtn">Generar Informe de Productividad</button>
+        <div id="productivityReportContainer"></div>
+        <canvas id="tasksChart"></canvas>
+        <canvas id="priorityChart"></canvas>
+    </div>
+    <script src="priority-model.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
